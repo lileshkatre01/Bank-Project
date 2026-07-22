@@ -466,6 +466,7 @@ body {
 .sbi-card-title {
     margin-bottom: 1.5rem;
     border-bottom: 1.5rem;
+    text-align: center;
 }
 
 .sbi-card-title h3 {
@@ -1620,6 +1621,10 @@ body:has(#forgot-password-view:not(.hidden)) #dashboard-view {
     margin: 1.5rem auto 0 auto;
     padding: 0 1.5rem;
     display: none; /* Hidden by default */
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
 }
 
 .sbi-global-back-btn {

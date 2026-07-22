@@ -46,9 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     generateCaptcha('reg');
     generateCaptcha('reset');
 
-    // Default sample email for demo convenience
-    document.getElementById('login-email').value = 'demo@gmail.com';
-    document.getElementById('login-password').value = 'Password123!';
 });
 
 /* ==========================================================================
@@ -301,6 +298,11 @@ function handleRegisterSubmit(e) {
 
     if (password.length < 6) {
         showToast('Password must be at least 6 characters long', 'error');
+        return;
+    }
+
+    if (phone.length !== 10 || !/^\d+$/.test(phone)) {
+        showToast('Mobile number must be exactly 10 digits', 'error');
         return;
     }
 
