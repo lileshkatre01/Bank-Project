@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Net Banking - LNGH Bank</title>
-    <meta name="description" content="Secure Online Net Banking Portal by LNGH Bank.">
+    <title>Net Banking - SPX BANK</title>
+    <meta name="description" content="Secure Online Net Banking Portal by SPX BANK.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
     <!-- MAIN PORTAL WRAPPER -->
     <div class="portal-wrapper">
         
-        <!-- LNGH BANK TOP NAVIGATION STRIP -->
+        <!-- SPX BANK TOP NAVIGATION STRIP -->
         <div class="sbi-top-nav">
             <div class="sbi-top-nav-container">
                 <div class="sbi-top-nav-left">
@@ -52,7 +52,7 @@
         <header class="sbi-main-header">
             <div class="sbi-header-container">
                 <div class="sbi-logo-block" onclick="switchView('login')">
-                    <span class="lngh-text">LNGH Bank</span>
+                    <span class="spx-text">SPX BANK</span>
                     <span class="net-banking-tag">NET-BANKING</span>
                 </div>
                 
@@ -113,7 +113,7 @@
                     <!-- Left Welcome Panel -->
                     <div class="sbi-welcome-panel">
                         <h2 class="sbi-hello-title">Hello!</h2>
-                        <h3 class="sbi-welcome-subtitle">Welcome to the world of LNGH Bank</h3>
+                        <h3 class="sbi-welcome-subtitle">Welcome to the world of SPX BANK</h3>
                         
                         <div class="sbi-new-user-section">
                             <p class="sbi-new-user-label">Are you a new user?</p>
@@ -122,8 +122,7 @@
                                 <button class="sbi-btn-purple-fill" onclick="switchView('register')">Register Now</button>
                             </div>
                         </div>
-                        
-                        <p class="sbi-open-now-text">Don't have an account? <a href="#" onclick="switchView('register')" class="sbi-open-link">Open Now</a></p>
+
                     </div>
 
                     <!-- Right Card Panel (Authentication forms) -->
@@ -206,9 +205,15 @@
                                 </div>
 
                                 <form id="register-form" onsubmit="handleRegisterSubmit(event)" class="sbi-form">
-                                    <div class="sbi-form-group">
-                                        <label for="reg-fullname" class="sbi-form-label">Full Name</label>
-                                        <input type="text" id="reg-fullname" class="sbi-form-input" placeholder="Enter Full Name" required>
+                                    <div class="sbi-form-row">
+                                        <div class="sbi-form-group">
+                                            <label for="reg-firstname" class="sbi-form-label">First Name</label>
+                                            <input type="text" id="reg-firstname" class="sbi-form-input" placeholder="First Name" required>
+                                        </div>
+                                        <div class="sbi-form-group">
+                                            <label for="reg-lastname" class="sbi-form-label">Last Name</label>
+                                            <input type="text" id="reg-lastname" class="sbi-form-input" placeholder="Last Name" required>
+                                        </div>
                                     </div>
 
                                     <div class="sbi-form-group">
@@ -219,15 +224,6 @@
                                     <div class="sbi-form-group">
                                         <label for="reg-phone" class="sbi-form-label">Mobile Number</label>
                                         <input type="tel" id="reg-phone" class="sbi-form-input" placeholder="e.g. +91 9999999999" required>
-                                    </div>
-
-                                    <div class="sbi-form-group">
-                                        <label for="reg-account-type" class="sbi-form-label">Account Type</label>
-                                        <select id="reg-account-type" class="sbi-form-input sbi-select" required>
-                                            <option value="Savings Account">Savings Account</option>
-                                            <option value="Checking Account">Checking Account</option>
-                                            <option value="Corporate Vault Account">Corporate Vault Account</option>
-                                        </select>
                                     </div>
 
                                     <div class="sbi-form-group">
@@ -349,16 +345,6 @@
 
                 <!-- SBI SIGNATURE WAVES AND QUICK ACTIONS BAR -->
                 <div class="sbi-auth-bottom-banner">
-                    <div class="sbi-quick-actions-bar">
-                        <span class="sbi-qa-title">Quick Actions</span>
-                        <div class="sbi-qa-bullets-container">
-                            <span class="sbi-bullet-dot active"></span>
-                            <span class="sbi-bullet-dot"></span>
-                            <span class="sbi-bullet-dot"></span>
-                            <span class="sbi-bullet-dot"></span>
-                            <span class="sbi-bullet-dot"></span>
-                        </div>
-                    </div>
                     <div class="sbi-wave-wrapper">
                         <!-- Curved Waves mirroring screenshot background -->
                         <svg class="sbi-background-waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220" preserveAspectRatio="none">
@@ -371,7 +357,7 @@
             </div>
 
 
-            <!-- DASHBOARD CONTAINER (LNGH BANK HIGH FIDELITY LAYOUT) -->
+            <!-- DASHBOARD CONTAINER (SPX BANK HIGH FIDELITY LAYOUT) -->
             <div id="dashboard-view" class="sbi-dashboard-container hidden">
                 
                 <!-- GREETING ROW -->
@@ -412,11 +398,11 @@
                             </div>
                             <span class="sbi-carousel-label">Education Loan</span>
                         </div>
-                        <div class="sbi-carousel-item" onclick="triggerQuickAction('Welcome to LNGH Bank Tutorial')">
+                        <div class="sbi-carousel-item" onclick="triggerQuickAction('Welcome to SPX BANK Tutorial')">
                             <div class="sbi-carousel-icon bg-purple">
                                 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                             </div>
-                            <span class="sbi-carousel-label">Welcome to LNGH Bank</span>
+                            <span class="sbi-carousel-label">Welcome to SPX BANK</span>
                         </div>
                         <div class="sbi-carousel-item" onclick="triggerQuickAction('Elevate Spends offer')">
                             <div class="sbi-carousel-icon bg-pink">
@@ -631,7 +617,7 @@
         </div>
 
         
-        <!-- LNGH BANK THEMED SESSION TIMEOUT / ERROR DIALOG -->
+        <!-- SPX BANK THEMED SESSION TIMEOUT / ERROR DIALOG -->
         <div id="timeout-modal-overlay" class="timeout-modal-overlay hidden">
             <div class="timeout-modal">
                 <div class="timeout-modal-title">Session Timeout</div>

@@ -277,10 +277,11 @@ function handleLoginSubmit(e) {
 // 2. REGISTER HANDLER
 function handleRegisterSubmit(e) {
     e.preventDefault();
-    const name = document.getElementById('reg-fullname').value.trim();
+    const firstName = document.getElementById('reg-firstname').value.trim();
+    const lastName = document.getElementById('reg-lastname').value.trim();
+    const name = `${firstName} ${lastName}`.trim();
     const email = document.getElementById('reg-email').value.trim();
     const phone = document.getElementById('reg-phone').value.trim();
-    const accountType = document.getElementById('reg-account-type').value;
     const password = document.getElementById('reg-password').value;
 
     if (!validateCaptcha('reg')) {
@@ -314,7 +315,7 @@ function handleRegisterSubmit(e) {
             email,
             phone,
             password,
-            accountType,
+            accountType: 'Savings Account',
             accountNumber,
             balance: '25,000.00'
         };
@@ -407,7 +408,6 @@ async function triggerOtpFlow(action, email, payload) {
 
     startOtpTimer();
 
-    showToast(`Dispatched security OTP to your Gmail (${email})...`, 'info');
     await sendRealOtpEmail(email, currentOtpCode, action);
 }
 
@@ -422,7 +422,6 @@ async function sendRealOtpEmail(targetEmail, otpCode, action) {
         if (response.ok) {
             const data = await response.json();
             if (data.success && !data.requiresFrontendApiFallback) {
-                showToast(`OTP Mail delivered to your Gmail: ${targetEmail}`, 'success');
                 return;
             }
         }
@@ -443,11 +442,8 @@ async function sendRealOtpEmail(targetEmail, otpCode, action) {
             body: formData,
             headers: { 'Accept': 'application/json' }
         });
-
-        showToast(`OTP Email sent directly to your Gmail inbox: ${targetEmail}`, 'success');
     } catch (err) {
         console.error('Web Email dispatch error:', err);
-        showToast(`OTP generated. Check your Gmail (${targetEmail}).`, 'info');
     }
 }
 
@@ -481,7 +477,6 @@ function startOtpTimer() {
 async function resendOtpCode() {
     const targetEmail = document.getElementById('otp-target-display').textContent;
     currentOtpCode = Math.floor(100000 + Math.random() * 900000).toString();
-    showToast(`Resending new OTP code to ${targetEmail}...`, 'info');
     startOtpTimer();
     const boxes = document.querySelectorAll('.otp-box');
     boxes.forEach(box => box.value = '');
@@ -548,16 +543,13 @@ function submitOtpVerification() {
         closeOtpModal();
 
         if (pendingOtpAction === 'LOGIN') {
-            showToast('Gmail OTP Verified! Accessing Portal Vault...', 'success');
             completeLogin(pendingPayload.user);
         } else if (pendingOtpAction === 'REGISTER') {
             const users = getUsersFromStorage();
             users.push(pendingPayload.newUserObj);
             localStorage.setItem('bank_users', JSON.stringify(users));
-            showToast('Account Registered & Gmail OTP Verified!', 'success');
             completeLogin(pendingPayload.newUserObj);
         } else if (pendingOtpAction === 'RESET_PASSWORD') {
-            showToast('Gmail OTP Verified successfully!', 'success');
             document.getElementById('reset-verified-email').textContent = pendingPayload.userEmail;
             document.getElementById('forgot-password-form-1').classList.add('hidden');
             document.getElementById('forgot-password-form-2').classList.remove('hidden');
@@ -601,7 +593,6 @@ function checkExistingSession() {
 function handleLogout() {
     sessionStorage.removeItem('bank_active_session');
     currentUser = null;
-    showToast('Signed out securely from Portal Session', 'info');
     switchView('login');
 }
 
@@ -615,7 +606,7 @@ function showHelpModal(e) {
 }
 
 /* ==========================================================================
-   INTERACTIVE LNGH BANK PLUGINS
+   INTERACTIVE SPX BANK PLUGINS
    ========================================================================== */
 function playCaptchaSound(type) {
     if ('speechSynthesis' in window) {

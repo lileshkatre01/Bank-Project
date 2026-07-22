@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LNGH BANK NET BANKING PORTAL DESIGN STYLING
+   SPX BANK NET BANKING PORTAL DESIGN STYLING
    ========================================================================== */
 
 :root {
@@ -152,16 +152,21 @@ body {
 /* Logo Styling */
 .sbi-logo-block {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     cursor: pointer;
     user-select: none;
+    flex-shrink: 0;
+    white-space: nowrap;
+    line-height: 1.1;
 }
 
-.lngh-text {
+.spx-text {
     font-size: 1.45rem;
     font-weight: 700;
     color: #5c1c7f;
     letter-spacing: -0.5px;
+    white-space: nowrap;
 }
 
 .sbi-logo-ring {
@@ -195,24 +200,27 @@ body {
     font-size: 0.52rem;
     font-weight: 700;
     color: #666666;
-    border-left: 1px solid #cccccc;
-    padding-left: 6px;
-    margin-left: 6px;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-self: center;
+    letter-spacing: 1.5px;
+    display: block;
+    white-space: nowrap;
+    margin-top: 1px;
 }
 
 /* Nav Menu */
 .sbi-main-nav {
     flex-grow: 1;
-    margin-left: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
 }
 
 .sbi-nav-menu {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 0.5rem;
 }
 
 .sbi-nav-item {
@@ -277,12 +285,13 @@ body {
 }
 
 .sbi-avatar-initials {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
     background-color: var(--sbi-accent-purple);
     color: #ffffff;
     border-radius: 50%;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -1640,4 +1649,23 @@ body:has(#forgot-password-view:not(.hidden)) #dashboard-view {
 body:has(#register-view:not(.hidden)) .sbi-global-back-container,
 body:has(#forgot-password-view:not(.hidden)) .sbi-global-back-container {
     display: block;
+}
+
+/* Horizontal alignment for registration name fields */
+.sbi-form-row {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.sbi-form-row .sbi-form-group {
+    flex: 1;
+}
+
+/* Ensure stacks properly on mobile screens */
+@media (max-width: 480px) {
+    .sbi-form-row {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
 }
