@@ -41,9 +41,9 @@
                         <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
                     <span class="sbi-top-divider">|</span>
-                    <button class="sbi-font-btn" onclick="showToast('Adjusting font size', 'info')">A-</button>
-                    <button class="sbi-font-btn" onclick="showToast('Font size reset', 'info')">A</button>
-                    <button class="sbi-font-btn" onclick="showToast('Adjusting font size', 'info')">A+</button>
+                    <button class="sbi-font-btn">A-</button>
+                    <button class="sbi-font-btn">A</button>
+                    <button class="sbi-font-btn">A+</button>
                 </div>
             </div>
         </div>
@@ -120,6 +120,28 @@
                             <p class="sbi-new-user-desc">Choose the option below to get started</p>
                             <div class="sbi-new-user-actions">
                                 <button class="sbi-btn-purple-fill" onclick="switchView('register')">Register Now</button>
+                            </div>
+                        </div>
+
+                        <!-- Registration Benefits (Shown only on Register View) -->
+                        <div class="sbi-register-benefits-section">
+                            <ul class="sbi-benefits-list">
+                                <li>
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                    Fast & Secure Account Setup
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                    24/7 Digital Banking Access
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                    Advanced Fraud Protection
+                                </li>
+                            </ul>
+                            <div class="sbi-login-prompt">
+                                <p>Already have an account?</p>
+                                <button class="sbi-btn-purple-outline" onclick="switchView('login')">Login Here</button>
                             </div>
                         </div>
 
@@ -620,12 +642,12 @@
         <!-- SPX BANK THEMED SESSION TIMEOUT / ERROR DIALOG -->
         <div id="timeout-modal-overlay" class="timeout-modal-overlay hidden">
             <div class="timeout-modal">
-                <div class="timeout-modal-title">Session Timeout</div>
+                <div class="timeout-modal-title">Under Development</div>
                 <div class="timeout-modal-body">
                     <div class="timeout-caution-icon">
                         <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#dc2626" stroke-width="1.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                     </div>
-                    <p class="timeout-message" id="timeout-message-text">We are observing some technical issue, please try again after some time.</p>
+                    <p class="timeout-message" id="timeout-message-text">this feature is currently under development.</p>
                 </div>
                 <div class="timeout-modal-footer">
                     <button class="timeout-ok-btn" onclick="closeTimeoutModal()">OK</button>

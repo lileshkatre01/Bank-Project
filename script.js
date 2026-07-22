@@ -599,7 +599,7 @@ function handleLogout() {
 }
 
 function triggerQuickAction(actionName) {
-    showTimeoutModal("We are observing some technical issue, please try again after some time.");
+    showTimeoutModal("This feature is currently under development.");
 }
 
 function showHelpModal(e) {
