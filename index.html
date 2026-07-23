@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Net Banking - SPX BANK</title>
+    <title>SPX BANK - Net Banking</title>
+    <link rel="icon" type="image/png" href="./assets/favicon/favicon.png">
     <meta name="description" content="Secure Online Net Banking Portal by SPX BANK.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,9 +42,9 @@
                         <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
                     <span class="sbi-top-divider">|</span>
-                    <button class="sbi-font-btn" onclick="showToast('Adjusting font size', 'info')">A-</button>
-                    <button class="sbi-font-btn" onclick="showToast('Font size reset', 'info')">A</button>
-                    <button class="sbi-font-btn" onclick="showToast('Adjusting font size', 'info')">A+</button>
+                    <button class="sbi-font-btn">A-</button>
+                    <button class="sbi-font-btn">A</button>
+                    <button class="sbi-font-btn">A+</button>
                 </div>
             </div>
         </div>
@@ -120,6 +121,28 @@
                             <p class="sbi-new-user-desc">Choose the option below to get started</p>
                             <div class="sbi-new-user-actions">
                                 <button class="sbi-btn-purple-fill" onclick="switchView('register')">Register Now</button>
+                            </div>
+                        </div>
+
+                        <!-- Registration Benefits (Shown only on Register View) -->
+                        <div class="sbi-register-benefits-section">
+                            <ul class="sbi-benefits-list">
+                                <li>
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                    Fast & Secure Account Setup
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                    24/7 Digital Banking Access
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                    Advanced Fraud Protection
+                                </li>
+                            </ul>
+                            <div class="sbi-login-prompt">
+                                <p>Already have an account?</p>
+                                <button class="sbi-btn-purple-outline" onclick="switchView('login')">Login Here</button>
                             </div>
                         </div>
 
@@ -218,18 +241,18 @@
 
                                     <div class="sbi-form-group">
                                         <label for="reg-email" class="sbi-form-label">Gmail Address</label>
-                                        <input type="email" id="reg-email" class="sbi-form-input" placeholder="your.email@gmail.com" required>
+                                        <input type="email" id="reg-email" class="sbi-form-input" placeholder="" required>
                                     </div>
 
                                     <div class="sbi-form-group">
                                         <label for="reg-phone" class="sbi-form-label">Mobile Number</label>
-                                        <input type="tel" id="reg-phone" class="sbi-form-input" placeholder="e.g. +91 9999999999" required>
+                                        <input type="tel" id="reg-phone" class="sbi-form-input" placeholder="" maxlength="10" pattern="[0-9]{10}" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                                     </div>
 
                                     <div class="sbi-form-group">
                                         <label for="reg-password" class="sbi-form-label">Security Password</label>
                                         <div class="sbi-input-container">
-                                            <input type="password" id="reg-password" class="sbi-form-input sbi-password-input" placeholder="Minimum 6 characters" required oninput="checkPasswordStrength(this.value)">
+                                            <input type="password" id="reg-password" class="sbi-form-input sbi-password-input" placeholder="" required oninput="checkPasswordStrength(this.value)">
                                             <button type="button" class="sbi-input-btn absolute-btn" onclick="togglePasswordVisibility('reg-password', this)">
                                                 <svg class="eye-open" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                                                 <svg class="eye-closed hidden" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
@@ -283,7 +306,7 @@
                                 <form id="forgot-password-form-1" onsubmit="handleForgotPasswordRequest(event)" class="sbi-form">
                                     <div class="sbi-form-group">
                                         <label for="reset-email" class="sbi-form-label">Gmail Address</label>
-                                        <input type="email" id="reset-email" class="sbi-form-input" placeholder="your.email@gmail.com" required>
+                                        <input type="email" id="reset-email" class="sbi-form-input" placeholder="" required>
                                     </div>
 
                                     <!-- CAPTCHA -->
@@ -620,12 +643,12 @@
         <!-- SPX BANK THEMED SESSION TIMEOUT / ERROR DIALOG -->
         <div id="timeout-modal-overlay" class="timeout-modal-overlay hidden">
             <div class="timeout-modal">
-                <div class="timeout-modal-title">Session Timeout</div>
+                <div class="timeout-modal-title">Under Development</div>
                 <div class="timeout-modal-body">
                     <div class="timeout-caution-icon">
                         <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#dc2626" stroke-width="1.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                     </div>
-                    <p class="timeout-message" id="timeout-message-text">We are observing some technical issue, please try again after some time.</p>
+                    <p class="timeout-message" id="timeout-message-text">this feature is currently under development.</p>
                 </div>
                 <div class="timeout-modal-footer">
                     <button class="timeout-ok-btn" onclick="closeTimeoutModal()">OK</button>
